@@ -1,0 +1,228 @@
+/* Home */
+@import "@fontsource/cinzel-decorative";
+
+.home-header {
+  /* padding-bottom: 160px !important; */
+  font-family: "Cinzel Decorative", serif;
+   min-height: 100vh; /* ocupa toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 👈 centra vertical */
+  align-items: center;     /* 👈 centra horizontal */
+  text-align: center;
+}
+
+/* 🌌 FONDO */
+.home-section {
+  position: relative;
+  background: radial-gradient(circle at 50% 100%, #000000 0%, #000000 70%);
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  /* margin-top: 0; */
+  width: 100vw;
+}
+
+/* ✨ ESTRELLAS */
+.home-section::before,
+.home-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ⭐ capa 1 (muchas chiquitas) */
+.home-section::before {
+   background-image:
+    radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px);
+
+  background-size: 
+    120px 120px,
+    180px 180px,
+    240px 240px;
+
+  background-position:
+    0 0,
+    60px 100px,
+    130px 40px;
+
+  opacity: 0.5;
+  animation: moveStars 120s linear infinite;
+}
+
+/* 🌟 capa 2 (más grandes y glow) */
+.home-section::after {
+  background-image: radial-gradient(circle at center, white 2px, transparent 1px);
+  background-size: 280px 280px;
+  opacity: 0.7;
+  animation: moveStars 200s linear infinite, twinkle 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.25));
+}
+
+/* 🎞 movimiento */
+@keyframes moveStars {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+/* ✨ parpadeo sutil */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+}
+
+/* CONTENIDO */
+.home-content {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 1.1em !important;
+  font-family: "Cinzel Decorative", serif;
+  position: relative;
+  z-index: 0;
+}
+
+/* TITULOS */
+.heading {
+  font-size: clamp(2.5rem, 8vw, 8rem);
+  padding-left: clamp(10px, 5vw, 50px);
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  margin: 0;
+  color: #d8bf9f;
+  text-shadow: 0 0 10px rgba(216, 191, 159, 0.4),
+               0 0 25px rgba(216, 191, 159, 0.2);
+  /* margin-top: 150%; */
+
+}
+
+.heading-name {
+  font-size: clamp(1rem, 3vw, 2rem);
+  font-family: "Times New Roman", serif;
+  padding-left: clamp(10px, 4vw, 45px);
+  padding-top: 15px;
+  margin: 0;
+  color: #d8bf9f;
+  letter-spacing: clamp(1px, 0.5vw, 5px);
+}
+
+/* ☁️ NUBES */
+.clouds-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.cloud {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(500px, 60vw, 1000px);
+  opacity: 0;
+}
+
+.cloud-left {
+  left: 35%;
+  transform: translate(-50%, -50%);
+  animation: moveLeft 5s ease-out forwards;
+}
+
+.cloud-right {
+  right: 35%;
+  transform: translate(50%, -50%);
+  animation: moveRight 5s ease-out forwards;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-120%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translate(50%, -50%) scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(120%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .heading {
+    font-size: clamp(2rem, 10vw, 6rem);
+    padding-left: clamp(10px, 5vw, 30px);
+    margin-top: 10%;
+  }
+
+  .cloud {
+    top: 30%;
+    width: 120vw;
+  }
+
+  .cloud-left {
+    left: 50%;
+  }
+
+  .cloud-right {
+    right: 50%;
+  }
+
+  @keyframes moveLeft {
+    100% {
+      transform: translate(-130%, -50%) scale(1.1);
+    }
+  }
+
+  @keyframes moveRight {
+    100% {
+      transform: translate(130%, -50%) scale(1.1);
+    }
+  }
+}
+
+/* BOTÓN */
+.btn-conoceme-container {
+  position: relative;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+  z-index: 4;
+}
+
+.btn-conoceme {
+  background-color:  #d8bf9f;
+  color: #000000;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-conoceme:hover {
+  transform: scale(1.05);
+}
