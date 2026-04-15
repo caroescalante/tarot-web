@@ -49,7 +49,7 @@ const Navbar = () => {
                         <a href='#services' onClick={closeMenu}>Servicios</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#contacto' onClick={closeMenu}>Contacto</a>
+                        <a href='#contact' onClick={closeMenu}>Contacto</a>
                     </li>
                 </ul>
             </nav>
