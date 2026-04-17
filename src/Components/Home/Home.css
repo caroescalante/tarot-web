@@ -122,7 +122,7 @@
   left: 0;
   pointer-events: none;
   overflow: hidden;
-  z-index: 10;
+  z-index: 0;
 }
 
 .cloud {
@@ -151,7 +151,7 @@
     opacity: 1;
   }
   100% {
-    transform: translate(-120%, -50%) scale(1.1);
+    transform: translate(-125%, -50%) scale(1.1);
     opacity: 0.8;
   }
 }
@@ -162,41 +162,67 @@
     opacity: 1;
   }
   100% {
-    transform: translate(120%, -50%) scale(1.1);
+    transform: translate(125%, -50%) scale(1.1);
     opacity: 0.8;
   }
 }
 
+
+
+
 /* 📱 MOBILE */
 @media (max-width: 768px) {
   .heading {
-    font-size: clamp(2rem, 10vw, 6rem);
+    font-size: clamp(5rem, 10vw, 6rem);
     padding-left: clamp(10px, 5vw, 30px);
     margin-top: 10%;
+    margin-bottom: 3px;
   }
 
-  .cloud {
-    top: 30%;
-    width: 120vw;
+  .heading-name {
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin: 6px auto 10px;
+    color: #d8bf9f;
+  }
+
+  .heading-name span {
+    display: block;
+    font-size: clamp(0.7rem, 3.5vw, 1rem);
+  }
+
+ .cloud {
+    width: clamp(200px, 80vw, 400px);
+    opacity: 0.8;
+    z-index: 0;
   }
 
   .cloud-left {
-    left: 50%;
+    left: 10%;
+    animation: moveLeftMobile 5s ease-out forwards;
   }
 
   .cloud-right {
-    right: 50%;
+    right: 10%;
+    animation: moveRightMobile 5s ease-out forwards;
   }
 
-  @keyframes moveLeft {
+  @keyframes moveLeftMobile {
+    0% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
     100% {
-      transform: translate(-130%, -50%) scale(1.1);
+      transform: translate(-80%, -50%) scale(1);
     }
   }
 
-  @keyframes moveRight {
+  @keyframes moveRightMobile {
+    0% {
+      transform: translate(50%, -50%) scale(0.9);
+    }
     100% {
-      transform: translate(130%, -50%) scale(1.1);
+      transform: translate(80%, -50%) scale(1);
     }
   }
 }
@@ -208,7 +234,7 @@
   left: 50%;
   transform: translateX(-50%);
   top: 80px;
-  z-index: 4;
+  z-index: 0;
 }
 
 .btn-conoceme {

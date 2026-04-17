@@ -14,10 +14,6 @@ const Home = () => {
 
                   {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
-            {/* <br /><br /><br />
-            <br /><br /><br />
-            <br /><br /><br /> */}
-
             <div className="clouds-container">
               <img src={nube} className="cloud cloud-left" alt="" />
               
@@ -29,9 +25,14 @@ const Home = () => {
               tarot
             </h1>
             
-            <h2 className="heading-name">
+            {/* <h2 className="heading-name">
               Conecta con tu destino a través del tarot
-            </h2>
+            </h2> */}
+
+            <h2 className="heading-name">
+  <span className="line1">Conecta con tu destino</span>
+  <span className="line2">a través del tarot</span>
+</h2>
 
 
              <div className="btn-conoceme-container">
