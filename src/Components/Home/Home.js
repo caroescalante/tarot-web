@@ -30,7 +30,7 @@ const Home = () => {
             </h2> */}
 
             <h2 className="heading-name">
-  <span className="line1">Conecta con tu destino</span>
+  <span className="line1">Conecta con tu destino </span>
   <span className="line2">a través del tarot</span>
 </h2>
 
